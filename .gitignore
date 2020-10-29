@@ -56,6 +56,3 @@ typings/
 
 # dotenv environment variables file
 .env
-
-# dont check in compiled babel code
-lib/
