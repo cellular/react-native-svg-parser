@@ -1,7 +1,7 @@
 # react-native-svg-parser
 
 ```
-This project is a proof of concept only. It is not actively maintained. 
+This project is a proof of concept only. It is not actively maintained.
 ```
 
 [![npm version](https://badge.fury.io/js/%40target-corp%2Freact-native-svg-parser.svg)](https://badge.fury.io/js/%40target-corp%2Freact-native-svg-parser) [![Build Status](https://travis-ci.org/target/react-native-svg-parser.svg?branch=master)](https://travis-ci.org/target/react-native-svg-parser)
@@ -38,13 +38,14 @@ render() {
 
 The parser takes a third parameter, and object with config options. You can specify the following values:
 
-| Prop name | Type   | Description |
-|-----------|--------| ------------|
-| width     | number | overrides the width provided by viewbox, becomes "width" prop on ```Svg``` element |
-| height    | number | overrides the height provided by viewbox, becomes "height" prop on ```Svg``` element |
-| viewBox   | string | overrides the viewbox element on the SVG and is added as a prop on ```Svg``` element |
-| DOMParser | object | this is passed directly to xmldom.DOMParser, see xmldom docs for options available |
-| omitById  | array  | an optional array of ids to omit from the SVG output object |
+| Prop name     | Type   | Description                                                                         |
+| ------------- | ------ | ----------------------------------------------------------------------------------- |
+| width         | number | overrides the width provided by viewbox, becomes "width" prop on `Svg` element      |
+| height        | number | overrides the height provided by viewbox, becomes "height" prop on `Svg` element    |
+| viewBox       | string | overrides the viewbox element on the SVG and is added as a prop on `Svg` element    |
+| DOMParser     | object | this is passed directly to xmldom.DOMParser, see xmldom docs for options available  |
+| omitById      | array  | an optional array of ids to omit from the SVG output object                         |
+| onClickEvents | array  | an optional array of objects containing the if of the node and the onPress function |
 
 Example usage:
 
@@ -75,7 +76,6 @@ render() {
 
 ```
 
-
 ## Developing: Lint test and build
 
 In order to test and develop locally you will need to install the peer dependencies (React and React Native). However, we have you covered. Just run this command:
@@ -90,19 +90,18 @@ Then you can run test lint and build using this command:
 npm run ci
 ```
 
-
-
 ## Console warning, on transform prop
 
 On v5.5.1 react-native-svg enforced prop type of "object" on transform attribute. However,
 as of v6.0.0 this is changed to:
+
 ```
     transform: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
 ```
+
 https://github.com/react-native-community/react-native-svg/blob/master/lib/props.js#L69
 
-Therefore, the minimum version compatibility for this libaray with ```react-native-svg``` is version 6.0.0.
-
+Therefore, the minimum version compatibility for this libaray with `react-native-svg` is version 6.0.0.
 
 ## Changelog
 
