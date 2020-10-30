@@ -203,6 +203,18 @@ function traverse(markup, config, i = 0) {
   });
 
   const k = i + Math.random();
+
+  if (config.onClickEvents && idName) {
+    const clickEvent = config.onClickEvents.find((e) => e.id === idName);
+    if (clickEvent) {
+      return (
+        <Elem {...elemAttributes} key={k} onPress={clickEvent.onPress}>
+          {children}
+        </Elem>
+      );
+    }
+  }
+
   return (
     <Elem {...elemAttributes} key={k}>
       {children}
